@@ -1,0 +1,40 @@
+/*********************************************
+ * OPL 12.5.1.0 Data
+ * Author: Ejas M
+ * Creation Date: 05-Nov-2013 at 9:22:29 PM
+ *********************************************/
+///// CONNECTING TO FILE /////
+//SheetConnection SourceData("test.xls");
+SheetConnection SourceData("macrotest.xlsm");
+
+///// READING FROM EXCEL FILE//////////
+
+SubjectNo from SheetRead (SourceData, "SubjectNo");
+RoomNo from SheetRead (SourceData, "RoomNo");
+DayNo from SheetRead (SourceData, "DaysNo");
+TimeNo from SheetRead (SourceData, "TimesNo");
+ProfNo from SheetRead (SourceData, "ProfNo");
+
+Th from SheetRead (SourceData, "OverlapMatrix");
+SubjectCap from SheetRead (SourceData, "SubjectCap");
+RoomCap from SheetRead (SourceData, "RoomCap");
+ProfSub1D from SheetRead(SourceData, "ProfSub");
+
+
+///Writing O/P to Excel////
+OP0 to SheetWrite(SourceData, "SubDayTimeFull");
+OP to SheetWrite(SourceData, "SubDayTime");
+TT0 to SheetWrite(SourceData, "TimeTableFull");
+TT to SheetWrite(SourceData, "TimeTable");
+
+/////////////////Testing Location//////////////////////////// 
+
+//Th from SheetRead (SourceData, "Variables!B5:E8");
+
+//Th = [[10000 10 20 30] [10 10000 25 35] [20 25 10000 40] [30 35 40 10000]];
+
+//Th from SheetRead (SourceData, ”cPLEXdata!B4:E7”);
+
+
+//SubjectCap= [50 20 60 10];
+//RoomCap= [70 120];
